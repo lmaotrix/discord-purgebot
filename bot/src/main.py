@@ -4,6 +4,7 @@ from discord.ext import commands
 from config import TOKEN
 import os
 
+
 intents = discord.Intents.all()
 intents.members = True
 

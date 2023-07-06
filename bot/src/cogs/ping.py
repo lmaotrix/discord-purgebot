@@ -1,7 +1,6 @@
 from discord.ext import commands
 from config import USER_ID
 
-
 class Ping(commands.Cog):
     def __init__(self, bot):
         self.bot = bot

@@ -26,16 +26,15 @@ class BanUsers(commands.Cog):
             print(ctx.guild.me.guild_permissions.ban_members)
             banned_users = []
             for member in ctx.guild.members:
-                if any(name in member.name.lower() for name in banned_names):
+                if any(name in (member.global_name or "") for name in banned_names):
                     await member.ban(reason='ayanokoji wannabe issue')
-                    banned_users.append(member.name)
+                    banned_users.append(member.display_name)
             if banned_users:
-                await ctx.send('all ayanokoji wannabes have been banned')
+                await ctx.send('All ayanokoji wannabes have been banned')
             else:
-                await ctx.send('Server is Clear!')
+                await ctx.send('Server is clear!')
         else:
             await ctx.send(f"{ctx.author.mention}, you're not worthy of using me.")
-        pass
 
 async def setup(bot):
     await bot.add_cog(BanUsers(bot))
