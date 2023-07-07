@@ -1,7 +1,7 @@
 from discord.ext import commands
 from config import USER_ID
 
-class Ping(commands.Cog):
+class Mention(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
     
@@ -37,4 +37,4 @@ class Ping(commands.Cog):
 
 
 async def setup(bot):
-    await bot.add_cog(Ping(bot))
+    await bot.add_cog(Mention(bot))
